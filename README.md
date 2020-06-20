@@ -78,7 +78,7 @@ pip install jsonmerge
 Once you've configured your environment all that is left to do is now test to see if things are working. Try running the following command from the shell which will test using our collection script.
 
 ```bash
-/opt/telegraf/env3/bin/python /opt/telegraf/ASA-Telemetry-Guide/telegraf/scripts/asascript.py
+/opt/telegraf/PyASA/bin/python /opt/telegraf/ASA-Telemetry-Guide/telegraf/scripts/asascript.py
 ```
 
 ![](./images/run-command.gif)
