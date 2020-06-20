@@ -61,7 +61,7 @@ mkdir /opt/telegraf && cd /opt/telegraf
 And clone this repo into the folder and create a python virtual environment. A Virtual Environment acts as an isolated working copy of Python which allows you to work on a specific project without worry of affecting other projects. It is strongly recommended that you use this as it creates an isolated environment for our exercise which has its own dependencies, regardless of what other packages are installed on the system.
 
 ```bash
-git clone https://github.com/sttrayno/ASA-Telemetry-Guide.git
+git clone https://github.com/AngelIV23/ASA-Telemetry-Guide.git
 python3 -m venv PyASA
 source PyASA/bin/activate
 ```
