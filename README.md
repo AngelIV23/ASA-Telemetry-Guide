@@ -33,7 +33,7 @@ docker pull jeremycohoe/tig_mdt
 Let that pull down the required image from Docker hub then run the following command to start the container.
 
 ```
-docker run -ti -p 3000:3000 -p 57500:57500 jeremycohoe/tig_mdt
+docker run -ti -d -p 3000:3000 -p 57500:57500 --name=asa_telemetry --hostname=asa_telemetry jeremycohoe/tig_mdt
 ```
 
 As this docker container wasn't fully built for what we're looking to do we need to do some further configuration. To do this, from your shell use the command `docker ps` to display your container id. Take the containerid value which should be 12 digit alphanumeric string and then use the command `docker exec -it <CONTAINER ID HERE> /bin/bash` . Once you do that you should have root prompt for your container.
@@ -45,26 +45,25 @@ As this docker container wasn't fully built for what we're looking to do we need
 Now we're in use the following commands to install the necessary components and packages, run these one after the other
 
 ```bash
-apt-get update && apt-get upgrade
-apt-get install python3
-apt-get install python3-pip && apt-get install python3-venv
-apt-get install git
-apt-get install ssh
+apt-get -y update && apt-get -y upgrade
+apt-get install -y python3
+apt-get install -y python3-pip && apt-get install -y python3-venv
+apt-get install -y git
+apt-get install -y ssh
 ```
 
 Now create some directories we'll use later
 
 ```bash
-mkdir /opt/telegraf
-cd /opt/telegraf
+mkdir /opt/telegraf && cd /opt/telegraf
 ```
 
 And clone this repo into the folder and create a python virtual environment. A Virtual Environment acts as an isolated working copy of Python which allows you to work on a specific project without worry of affecting other projects. It is strongly recommended that you use this as it creates an isolated environment for our exercise which has its own dependencies, regardless of what other packages are installed on the system.
 
 ```bash
 git clone https://github.com/sttrayno/ASA-Telemetry-Guide.git
-python3 -m venv env3
-source env3/bin/activate
+python3 -m venv PyASA
+source PyASA/bin/activate
 ```
 
 Finally install the Python package requirements with the pip command.
