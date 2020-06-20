@@ -50,6 +50,8 @@ apt-get install -y python3
 apt-get install -y python3-pip && apt-get install -y python3-venv
 apt-get install -y git
 apt-get install -y ssh
+apt-get install -y rsyslog
+
 ```
 
 Now create some directories we'll use later
